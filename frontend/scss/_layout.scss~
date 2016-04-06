@@ -1,0 +1,13 @@
+section {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container-title {
+    margin-left: 16.6667%;
+    margin-bottom: 30px;
+
+    font-family: $header-font;
+    font-size: 15px;
+    font-weight: 700;
+}

@@ -1,0 +1,10 @@
+<div class="home">
+    <!-- HEADER -->
+    <div class="home-header">
+        <div class="container">
+            <img class="home-header-image" src="assets/images/logo.png" />
+        </div>
+    </div>
+
+    <div ui-view></div>
+</div>

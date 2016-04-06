@@ -1,0 +1,92 @@
+<div class="jobs">
+
+    <!-- Search bar -->
+    <section class="jobs-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="fa fa-search"></i>
+                </span>
+
+                <input type="text"
+                       class="form-control"
+                       name="q"
+                       ng-model="vm.q"
+                       ng-change="vm.search()"
+                       placeholder="Search"/>
+
+                <div class="input-group-btn">
+                    <a ui-sref="home.postjob" class="btn btn-default">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </div>
+            </div>
+            
+                <!-- top keywords -->
+    <section class="top-keywords" ng-show="vm.topKeywords.length > 0">
+      <p> <strong> Top Keywords! </strong> </p>
+      <table class="table">
+         <thead>
+            <tr> <th> Keyword </th> <th> Count </th> </tr>
+         </thead>
+         <tr ng-repeat="kw in vm.topKeywords">
+            <td ng-bind="kw._id"/>
+            <td ng-bind="kw.count"/>
+         </tr>
+      </table>
+   </section>
+
+        </div>
+    </section>
+    
+
+    <!-- No job -->
+    <div ng-show="vm.jobs.length <= 0">
+        <section>
+            <div class="container">
+                <div class="container-title">
+                    No job.
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- Many jobs -->
+    <div ng-show="vm.jobs.length > 0">
+
+        <!-- job -->
+        <section class="job" ng-repeat="job in vm.jobs">
+            <div class="container">
+                <div class="job-header">
+                    <div class="job-header-title">
+                        <a ui-sref="home.viewjob({id : job._id })"
+                           ng-bind="job.title"
+                           ></a>
+                    </div>
+
+                     <!--
+                    <div class="job-header-actions">
+                        <button type="button"
+                                class="btn btn-default fa fa-trash"
+                                ng-click="vm.removeById(job._id)"></button>
+                    </div>-->
+                </div>
+
+                <div class="job-body">
+                    <p ng-bind="job.description"></p>
+                </div>
+
+                <div class="job-footer">
+                    <div class="job-footer-tags">
+                        <button type="button"
+                                ng-bind="tag"
+                                ng-click="vm.searchByTag(tag)"
+                                ng-repeat="tag in job.tags"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>

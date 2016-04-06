@@ -1,0 +1,13 @@
+const app = angular.module('myApp.home.articles', []);
+
+
+/*
+ * Route
+ */
+import route from './jobs.route';
+
+app
+    .config(route);
+
+
+export default app;

@@ -1,0 +1,22 @@
+// From bootstrap
+$font-size-base: 14px;
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$text-color: #333;
+$body-bg: #D2D1BC;
+$header-color: #483527;
+$brand-primary: #4f8cfc;
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+
+// Fonts
+$text-font: 'Roboto', Helvetica, Arial, sans-serif;
+$header-font: 'Montserrat', sans-serif;
+$text-hover-color: #555;
+
+// Animation
+$default-transition-duration: .3s;

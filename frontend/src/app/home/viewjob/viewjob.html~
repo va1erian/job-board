@@ -1,0 +1,7 @@
+<section class="viewjob">
+    <div class="container">
+        <div class="container-title" ng-bind="vm.job.title"/>
+         <p ng-bind="vm.job.description"></p>
+         <p>Contact <span ng-bind="vm.job.email"/> for more information.</p>
+    </div>
+</section>

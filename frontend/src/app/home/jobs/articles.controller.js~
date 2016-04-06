@@ -1,0 +1,40 @@
+export default class Controller {
+    constructor(JobsService) {
+        'ngInject';
+
+        this.JobsService = JobsService;
+
+        this.jobs = [];
+        this.search();
+    }
+
+
+    search() {
+        this.jobsService
+            .search(this.q)
+            .then((jobs) => this.jobs = jobs);
+    }
+
+
+    searchByTag(tag) {
+        this.q = tag;
+
+        this.search();
+    }
+
+
+    removeById(_id) {
+        this.jobsService
+            .removeById(_id)
+            .then(() => {
+                for (let i = 0; i < this.jobs.length; ++i) {
+                    const article = this.jobs[i];
+
+                    if (_id === article._id) {
+                        this.jobs.splice(i, 1);
+                        break;
+                    }
+                }
+            });
+    }
+}

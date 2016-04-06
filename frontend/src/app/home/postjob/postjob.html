@@ -1,0 +1,92 @@
+<section class="newjob">
+    <div class="container">
+        <div class="container-title">New job</div>
+
+        <form name="myForm"
+              class="form-horizontal"
+              novalidate
+              ng-submit="vm.create()">
+
+            <!-- Title -->
+            <div class="form-group"
+                 ng-class="{'has-error': !myForm.title.$valid && myForm.title.$dirty}">
+                <label class="col-sm-2 control-label">Title</label>
+
+                <div class="col-sm-10">
+                    <input type="text"
+                           class="form-control"
+                           name="title"
+                           ng-model="vm.newjob.title"
+                           placeholder="Title"
+                           required>
+
+                    <span class="help-block"
+                          ng-messages="myForm.title.$error"
+                          ng-show="!myForm.title.$valid && myForm.title.$dirty">
+                        <span ng-message="required">Title is required</span>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Description</label>
+
+                <div class="col-sm-10">
+                    <textarea class="form-control"
+                              rows="10"
+                              name="description"
+                              ng-model="vm.newjob.description"></textarea>
+                </div>
+            </div>
+
+            <!-- Contact Email -->
+            <div class="form-group"
+                 ng-class="{'has-error': !myForm.email.$valid && myForm.email.$dirty}">
+                <label class="col-sm-2 control-label">Contact Email</label>
+
+                <div class="col-sm-10">
+                    <input type="email"
+                           class="form-control"
+                           name="email"
+                           ng-model="vm.newjob.email"
+                           placeholder="email"
+                           required>
+
+                    <span class="help-block"
+                          ng-messages="myForm.url.$error"
+                          ng-show="!myForm.url.$valid && myForm.url.$dirty">
+                        <span ng-message="required">The email is required</span>
+                        <span ng-message="url">Email has wrong format</span>
+                    </span>
+                </div>
+            </div>
+
+
+            <!-- Keywords -->
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Keywords</label>
+
+                <div class="col-sm-10">
+                    <input type="text"
+                           class="form-control"
+                           name="tags"
+                           ng-model="vm.tagsline"
+                           placeholder="Tags, separate by comma">
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit"
+                            class="btn btn-default"
+                            ng-disabled="!myForm.$valid">Save
+                    </button>
+
+                    <a ui-sref="home.jobs" class="btn btn-default">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
